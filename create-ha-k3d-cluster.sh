@@ -40,6 +40,7 @@ k3d cluster create --config "$CLUSTER_CONFIG_PATH"
 
 kubectl apply -f ./secrets/vault-token.yaml
 
+kubectl create namespace flux-system
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/rbac.yaml
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/manifest.yaml
 
