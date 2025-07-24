@@ -43,4 +43,9 @@ k3d kubeconfig get prd-cluster | Set-Content -Encoding utf8 $KUBECONFIG_PATH
 # Patch kubeconfig to use 127.0.0.1
 (Get-Content $KUBECONFIG_PATH) -replace "k3d-prd-cluster\.localhost", "127.0.0.1" | Set-Content -Encoding utf8 $KUBECONFIG_PATH
 
+kubectl apply -f ./secrets/vault-token.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/rbac.yaml
+kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/manifest.yaml
+
 Write-Host "✅ HA K3d cluster setup complete!"

@@ -1,7 +1,7 @@
 ﻿apiVersion: k3d.io/v1alpha5
 kind: Simple
 metadata:
-  name: stg-cluster
+  name: prd-cluster
 servers: 3
 agents: 2
 kubeAPI:
