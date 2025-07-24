@@ -12,8 +12,7 @@ metadata:
 servers: 3
 agents: 2
 kubeAPI:
-  host: "127.0.0.1"
-  hostIP: "127.0.0.1"
+  hostIP: "192.168.1.11"
   hostPort: "6443"
 image: rancher/k3s:v1.29.4-k3s1
 options:
