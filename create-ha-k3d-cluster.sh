@@ -43,4 +43,9 @@ kubectl create namespace flux-system
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/rbac.yaml
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/capacitor/refs/tags/capacitor-v0.4.8/deploy/k8s/manifest.yaml
 
+kubeconfig="$(k3d kubeconfig get stg-cluster)"
+echo "$kubeconfig"
+
 echo "✅ HA K3d cluster setup complete!"
+# To create a token for Headlamp, run the following command:
+# kubectl create token headlamp --namespace headlamp
